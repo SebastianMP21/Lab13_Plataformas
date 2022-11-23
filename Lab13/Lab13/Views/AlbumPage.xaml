@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab13.Views.AlbumPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.Padding>
+                <OnPlatform 
+                    x:TypeArguments="Thickness"
+                    Android="20"
+                    iOS="50"/>
+            </StackLayout.Padding>
+
+            <Label 
+                Text="Artista"/>
+            <Picker
+                Title="Selecciona un Artista"
+                ItemsSource="{Binding Artistas}"
+                ItemDisplayBinding="{Binding Nombre}"
+                SelectedItem="{Binding SelectedArtista}"/>
+
+            <Label
+                Text="Título"/>
+            <Entry 
+                Placeholder="Título"
+                Text="{Binding Titulo}"/>
+
+            <Label
+                Text="Precio"/>
+            <Entry 
+                Placeholder="Precio"
+                Text="{Binding Precio}"/>
+
+            <Label
+                Text="Año"/>
+            <Entry 
+                Placeholder="Año"
+                Text="{Binding Anio}"/>
+
+            <Button
+                Text="Guardar"
+                Command="{Binding CreateCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
